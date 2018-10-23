@@ -13,7 +13,7 @@ mysqldump \
 
 if [[ $? == 0 ]]; then 
     echo compressing mysqldump file using tar...
-    tar -C /tmp czf ${mysqldump_filename} ./mysqldump.sql
+    tar czf ${mysqldump_filename} -C /tmp ./mysqldump.sql
 
     if [[ $? == 0 ]]; then
         echo pushing tar file to S3
