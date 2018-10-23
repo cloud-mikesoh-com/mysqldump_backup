@@ -20,7 +20,9 @@ if [[ $? == 0 ]]; then
         aws s3 cp --sse AES256 ${mysqldump_filename} ${S3_BUCKET}
 
         if [[ $? == 0 ]]; then
-            echo Success!
+            echo Success!  Removing dump files
+
+            rm -f /tmp/mysqldump*
         else
             echo Fail!  Exit code: $?
             exit $?
