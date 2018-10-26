@@ -17,7 +17,7 @@ if [[ $? == 0 ]]; then
 
     if [[ $? == 0 ]]; then
         echo pushing tar file to S3
-        aws s3 cp --sse AES256 ${mysqldump_filename} ${S3_BUCKET}
+        aws s3 cp ${mysqldump_filename} ${S3_BUCKET}
 
         if [[ $? == 0 ]]; then
             echo Success!  Removing dump files
