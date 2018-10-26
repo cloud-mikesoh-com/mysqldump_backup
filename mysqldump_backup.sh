@@ -1,7 +1,7 @@
 #!/bin/bash
 
 S3_BUCKET=s3://mikesoh.com-galactica-backup/mysql-backups/
-mysqldump_filename=/tmp/mysqldump-`date +%Y-%m-%d__%R`.tar.gz
+mysqldump_filename=/tmp/mysqldump-`date +%Y-%m-%d__%H%M`.tar.gz
 
 echo running mysqldump...
 mysqldump \
